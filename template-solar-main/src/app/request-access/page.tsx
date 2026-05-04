@@ -11,15 +11,33 @@ export default function RequestAccessPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
     
-    // Simulate API call
-    setTimeout(() => {
+    try {
+      const response = await fetch("https://formspree.io/f/mbdwgvya", {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          email: email,
+          message: suggestion
+        })
+      })
+
+      if (response.ok) {
+        setIsSubmitted(true)
+      } else {
+        console.error("Form submission failed")
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error)
+    } finally {
       setIsSubmitting(false)
-      setIsSubmitted(true)
-    }, 1500)
+    }
   }
 
   return (
@@ -91,6 +109,7 @@ export default function RequestAccessPage() {
                       </div>
                       <input
                         id="email"
+                        name="email"
                         type="email"
                         required
                         value={email}
@@ -108,6 +127,7 @@ export default function RequestAccessPage() {
                     </label>
                     <textarea
                       id="suggestion"
+                      name="message"
                       rows={4}
                       value={suggestion}
                       onChange={(e) => setSuggestion(e.target.value)}
