@@ -5,28 +5,20 @@ export default function Testimonial() {
     <section className="relative mx-auto w-full max-w-6xl overflow-hidden rounded-xl shadow-2xl shadow-[#366A79]/70">
       <div className="absolute inset-0 object-cover">
         <Image
-          alt="official courtroom sketch"
-          src="/images/courtroom_official.jpg"
+          alt="background clouds"
+          src="/images/clouds.png"
           fill
           className="object-cover opacity-70"
         />
         <div className="absolute inset-0 bg-white/30 backdrop-blur-[1px]" />
       </div>
-      <div className="absolute top-76 -right-14 w-76 sm:top-48 sm:right-3 sm:w-92 md:top-48 md:right-0 md:w-100 lg:top-64 lg:right-12 lg:w-136">
-        <Image
-          alt="scales of justice"
-          src="/images/scales_floating.png"
-          width={1583}
-          height={554}
-          className="animate-hover mix-blend-multiply"
-        />
-      </div>
+
       <div className="relative z-20 mb-20 p-8 sm:p-14 lg:p-24">
         <div className="">
           <blockquote className="relative max-w-2xl text-xl leading-relaxed tracking-tight text-gray-900 md:text-2xl lg:text-3xl">
             <p className="before:absolute before:top-0 before:right-full before:content-['“'] after:text-gray-900/70 after:content-['”']">
               <strong className="font-semibold">
-                VeriScript AI transformed our transcript processing.
+                VerbaLex AI transformed our transcript processing.
               </strong>{" "}
               <span className="text-gray-900/70">
                 Their AI agents perfectly align our audio and accurately structure complex terminology, reducing our manual review time by 90% while improving precision.

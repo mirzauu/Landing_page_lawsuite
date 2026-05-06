@@ -1,4 +1,3 @@
-import { RiArrowRightUpLine } from "@remixicon/react"
 import { FadeContainer, FadeDiv, FadeSpan } from "../Fade"
 import GameOfLife from "./HeroBackground"
 
@@ -19,7 +18,7 @@ export function Hero() {
                 News
               </span>
                 <span className="w-full truncate">
-                  VeriScript AI Launch
+                  VerbaLex AI Launch
                 </span>
             </div>
           </a>

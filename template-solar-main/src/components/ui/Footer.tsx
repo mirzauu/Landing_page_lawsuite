@@ -14,8 +14,8 @@ const Footer = () => {
           href="/"
           className="mb-8 flex items-center font-medium text-gray-700 select-none"
         >
-          <SolarLogo className="w-24" />
-          <span className="sr-only">VeriScript AI Logo</span>
+          <SolarLogo className="w-40" />
+          <span className="sr-only">VerbaLex AI Logo</span>
         </Link>
         
         <div className="flex flex-col items-center gap-4">
@@ -31,7 +31,7 @@ const Footer = () => {
             </Link>
           </p>
           <p className="text-xs text-gray-400">
-            &copy; {CURRENT_YEAR} VeriScript AI. All rights reserved.
+            &copy; {CURRENT_YEAR} VerbaLex AI. All rights reserved.
           </p>
         </div>
       </footer>

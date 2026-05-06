@@ -2,26 +2,23 @@
 import { useState, useRef, useEffect } from "react"
 import matchedData from "../../../matched_output.json"
 import {
-  RiCarFill,
-  RiCheckLine,
-  RiCircleLine,
-  RiCodepenLine,
-  RiContrast2Line,
   RiFullscreenFill,
-  RiLoaderFill,
-  RiNotification2Line,
-  RiPlaneFill,
-  RiTruckFill,
   RiFilePdfFill,
   RiMicFill,
   RiCloseLine,
 } from "@remixicon/react"
 import { SolarMark } from "../../../public/SolarMark"
-import { Icons } from "../Icons"
 import { Orbit } from "../Orbit"
-import ChipViz from "./ChipViz"
 
-const demoChunks = matchedData.matches.map((m: any) => ({
+interface Match {
+  raw_chunk_id: string | number;
+  raw_chunk_text: string;
+  matched_audio_text?: string;
+  audio_start_time_sec: number;
+  audio_end_time_sec: number;
+}
+
+const demoChunks = (matchedData.matches as Match[]).map((m) => ({
   id: m.raw_chunk_id,
   raw: m.raw_chunk_text,
   matched: m.matched_audio_text || "(No audio match found)",
@@ -140,7 +137,7 @@ export default function Features() {
 
   return (
     <section
-      aria-label="Solar Technologies Features for Farms"
+      aria-label="VerbaLex AI Features"
       id="solutions"
       className="relative mx-auto max-w-6xl scroll-my-24"
     >
@@ -565,16 +562,7 @@ export default function Features() {
               </div>
             </div>
             
-            {/* Download Buttons Mockup */}
-            <div className="mt-4 flex gap-3">
-              <div className="flex-1 rounded-lg bg-blue-600 py-2.5 text-center text-[10px] font-bold text-white shadow-md hover:bg-blue-700 cursor-pointer transition-colors flex items-center justify-center gap-1.5">
-                <RiFilePdfFill className="size-3" />
-                Download PDF
-              </div>
-              <div className="flex-1 rounded-lg bg-gray-900 py-2.5 text-center text-[10px] font-bold text-white shadow-md hover:bg-black cursor-pointer transition-colors">
-                Export to Word
-              </div>
-            </div>
+
           </div>
         </div>
       </div>
@@ -597,7 +585,7 @@ export default function Features() {
             </div>
             <div className="flex-1 p-2 bg-gray-100 rounded-b-2xl overflow-hidden">
               <iframe 
-                src="/document_poc.pdf" 
+                src="/document_poc.pdf#toolbar=0" 
                 className="h-full w-full rounded-xl bg-white shadow-inner" 
                 title="Fullscreen PDF" 
               />

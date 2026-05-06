@@ -73,7 +73,7 @@ export default function RequestAccessPage() {
                   Thank you!
                 </h2>
                 <p className="text-gray-600 mb-8 leading-relaxed">
-                  We've added your email to our priority waitlist. We're working hard to get everything perfect, and you'll be among the first to know when we launch.
+                  We&apos;ve added your email to our priority waitlist. We&apos;re working hard to get everything perfect, and you&apos;ll be among the first to know when we launch.
                 </p>
                 <Link href="/">
                   <Button className="w-full h-12 bg-gray-900 hover:bg-black text-white rounded-xl font-medium shadow-md">
@@ -91,10 +91,10 @@ export default function RequestAccessPage() {
                 </div>
                 <div className="text-center mb-10">
                   <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 mb-4">
-                    We're Crafting Something Special
+                    We&apos;re Crafting Something Special
                   </h1>
                   <p className="text-gray-600 leading-relaxed max-w-sm mx-auto">
-                    VeriScript AI is currently in early access. Leave your details below and we'll personally invite you as soon as our systems are ready for you.
+                    VerbaLex AI is currently in early access. Leave your details below and we&apos;ll personally invite you as soon as our systems are ready for you.
                   </p>
                 </div>
 

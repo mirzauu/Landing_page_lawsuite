@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useRef } from "react"
 import {
-  RiUploadCloud2Line,
   RiFileWord2Fill,
   RiFilePdfFill,
   RiCheckLine,
@@ -23,7 +22,15 @@ const steps = [
   "Completed",
 ]
 
-const demoChunks = matchedData?.matches ? matchedData.matches.map((m: any) => ({
+interface Match {
+  raw_chunk_id: string | number;
+  raw_chunk_text: string;
+  matched_audio_text?: string;
+  audio_start_time_sec: number;
+  audio_end_time_sec: number;
+}
+
+const demoChunks = matchedData?.matches ? (matchedData.matches as Match[]).map((m) => ({
   id: m.raw_chunk_id,
   raw: m.raw_chunk_text,
   matched: m.matched_audio_text || "(No audio match found)",
@@ -134,7 +141,7 @@ export function DemoSection() {
   const audioRef = useRef<HTMLAudioElement>(null)
 
   const [chunks, setChunks] = useState(demoChunks)
-  const [editingChunkId, setEditingChunkId] = useState<number | null>(null)
+  const [editingChunkId, setEditingChunkId] = useState<string | number | null>(null)
   const [editValue, setEditValue] = useState("")
 
   const handleTimeUpdate = () => {
@@ -214,7 +221,7 @@ export function DemoSection() {
           Interactive Demo
         </h2>
         <p className="mt-2 text-3xl font-semibold tracking-tighter text-balance text-gray-900 md:text-5xl">
-          Experience the VeriScript AI Workflow
+          Experience the VerbaLex AI Workflow
         </p>
       </div>
 
@@ -226,7 +233,7 @@ export function DemoSection() {
             <div className="h-3 w-3 rounded-full bg-amber-400" />
             <div className="h-3 w-3 rounded-full bg-green-400" />
           </div>
-          <div className="mx-auto text-xs font-medium text-gray-400">VeriScript Workspace</div>
+          <div className="mx-auto text-xs font-medium text-gray-400">VerbaLex AI Workspace</div>
         </div>
 
         {/* Demo Content */}
