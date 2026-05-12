@@ -61,7 +61,7 @@ export default function EmailSenderPage() {
       } else {
         setStatus({ type: "error", msg: data.error || "Failed to send email." })
       }
-    } catch (err) {
+    } catch {
       setStatus({ type: "error", msg: "An unexpected error occurred." })
     } finally {
       setLoading(false)
