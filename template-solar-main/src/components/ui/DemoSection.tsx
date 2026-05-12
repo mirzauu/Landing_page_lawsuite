@@ -300,7 +300,7 @@ export function DemoSection() {
                         <RiFilePdfFill className="size-6" />
                       </div>
                       <div className="text-left">
-                        <p className="text-sm font-bold text-gray-900">document_poc.pdf</p>
+                        <p className="text-sm font-bold text-gray-900">case_raw_data.pdf</p>
                         <p className="text-[10px] text-gray-500 uppercase tracking-wider font-semibold">Rough Transcript • 1.2 MB</p>
                       </div>
                     </div>

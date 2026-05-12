@@ -29,7 +29,7 @@ const demoChunks = (matchedData.matches as Match[]).map((m) => ({
 const firstChunkStart = demoChunks.length > 0 ? demoChunks[0].start : 1347.09;
 
 export default function Features() {
-  const [isPdfExpanded, setIsPdfExpanded] = useState(false)
+  const [expandedPdf, setExpandedPdf] = useState<{ url: string; title: string } | null>(null)
   const [currentTime, setCurrentTime] = useState(0)
   const [audioDuration, setAudioDuration] = useState(0)
   const audioRef = useRef<HTMLAudioElement>(null)
@@ -138,7 +138,7 @@ export default function Features() {
   return (
     <section
       aria-label="VerbaLex AI Features"
-      id="solutions"
+      id="features"
       className="relative mx-auto max-w-6xl scroll-my-24"
     >
       {/* Vertical Lines */}
@@ -307,7 +307,7 @@ export default function Features() {
             <div className="flex justify-between items-center mb-2">
               <h4 className="text-xs font-bold text-gray-800">Stenographic report</h4>
               <button 
-                onClick={() => setIsPdfExpanded(true)}
+                onClick={() => setExpandedPdf({ url: "/case_raw_data.pdf", title: "Stenographic report (case_raw_data.pdf)" })}
                 className="rounded bg-white p-1 shadow-sm border border-gray-200 text-gray-500 hover:text-gray-900 transition-colors"
                 title="View Fullscreen"
               >
@@ -315,10 +315,10 @@ export default function Features() {
               </button>
             </div>
             <div className="relative">
-              <iframe src="/document_poc.pdf#toolbar=0" className="h-40 w-full rounded-lg border border-gray-200 bg-white pointer-events-none" />
+              <iframe src="/case_raw_data.pdf#toolbar=0" className="h-40 w-full rounded-lg border border-gray-200 bg-white pointer-events-none" />
               <div 
                 className="absolute inset-0 cursor-pointer" 
-                onClick={() => setIsPdfExpanded(true)}
+                onClick={() => setExpandedPdf({ url: "/case_raw_data.pdf", title: "Stenographic report (case_raw_data.pdf)" })}
               />
             </div>
           </div>
@@ -538,7 +538,7 @@ export default function Features() {
                 </div>
               </div>
               <button 
-                onClick={() => setIsPdfExpanded(true)}
+                onClick={() => setExpandedPdf({ url: "/case_proof_file.pdf", title: "Ai generated Final proof doc (case_proof_file.pdf)" })}
                 className="rounded-full bg-gray-50 p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-900 transition-colors"
                 title="View Fullscreen"
               >
@@ -547,13 +547,13 @@ export default function Features() {
             </div>
             <div className="relative aspect-[3/4] w-full overflow-hidden rounded-lg border border-gray-100 bg-gray-50 shadow-inner group">
               <iframe 
-                src="/document_poc.pdf#toolbar=0&navpanes=0&scrollbar=0" 
+                src="/case_proof_file.pdf#toolbar=0&navpanes=0&scrollbar=0" 
                 className="h-full w-full pointer-events-none" 
                 title="PDF Preview"
               />
               <div 
                 className="absolute inset-0 cursor-pointer flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-gray-900/10 backdrop-blur-[1px]"
-                onClick={() => setIsPdfExpanded(true)}
+                onClick={() => setExpandedPdf({ url: "/case_proof_file.pdf", title: "Ai generated Final proof doc (case_proof_file.pdf)" })}
               >
                  <div className="rounded-full bg-white px-4 py-2 text-xs font-bold text-gray-900 shadow-lg ring-1 ring-black/5 flex items-center gap-2">
                     <RiFullscreenFill className="size-3.5" />
@@ -568,16 +568,16 @@ export default function Features() {
       </div>
 
       {/* PDF Fullscreen Modal */}
-      {isPdfExpanded && (
+      {expandedPdf && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-gray-900/80 p-4 backdrop-blur-sm animate-in fade-in duration-200">
           <div className="relative flex h-full max-h-[90vh] w-full max-w-5xl flex-col rounded-2xl bg-white shadow-2xl">
             <div className="flex items-center justify-between border-b border-gray-200 px-6 py-4">
               <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
                 <RiFilePdfFill className="size-5 text-red-500" />
-                Stenographic report (SAKHAI -v- DELKAP.pdf)
+                {expandedPdf.title}
               </h3>
               <button 
-                onClick={() => setIsPdfExpanded(false)}
+                onClick={() => setExpandedPdf(null)}
                 className="rounded-full p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900 transition-colors"
               >
                 <RiCloseLine className="size-6" />
@@ -585,7 +585,7 @@ export default function Features() {
             </div>
             <div className="flex-1 p-2 bg-gray-100 rounded-b-2xl overflow-hidden">
               <iframe 
-                src="/document_poc.pdf#toolbar=0" 
+                src={`${expandedPdf.url}#toolbar=0`}
                 className="h-full w-full rounded-xl bg-white shadow-inner" 
                 title="Fullscreen PDF" 
               />
