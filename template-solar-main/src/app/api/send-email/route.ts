@@ -29,7 +29,7 @@ export async function POST(req: Request) {
   
   <!-- Raw Text & Name Section -->
   <div style="margin-bottom: 60px; max-width: 1152px; text-align: left;">
-    <p style="font-size: 16px; font-weight: 400; color: #111827; margin-bottom: 12px;">To: ${recipientName}</p>
+    <p style="font-size: 16px; font-weight: 400; color: #111827; margin-bottom: 12px;">Hi ${recipientName},</p>
     <div style="font-size: 16px; color: #374151; white-space: pre-wrap; line-height: 1.6; text-align: left;">${body}</div>
   </div>
 
@@ -54,7 +54,7 @@ export async function POST(req: Request) {
               <span style="text-decoration: none; color: #111827; margin: 0 16px;">Demo</span>
             </td>
             <td width="30%" align="right" style="padding-right: 12px;">
-              <span style="display: inline-block; background-color: #f3f4f6; color: #111827; font-weight: 600; font-size: 14px; padding: 10px 16px; border-radius: 8px; text-decoration: none;">Request Access</span>
+              <span style="display: inline-block; background-color: #f3f4f6; color: #111827; font-weight: 600; font-size: 14px; padding: 10px 16px; border-radius: 8px; text-decoration: none;">Try Now</span>
             </td>
           </tr>
         </table>
@@ -79,7 +79,7 @@ export async function POST(req: Request) {
 
           <div>
             <span style="display: inline-block; background: #f97316; background-image: linear-gradient(to bottom, #fb923c, #f97316); border-bottom: 2px solid #c2410c; color: #ffffff; font-weight: 500; font-size: 16px; padding: 12px 20px; border-radius: 6px; text-decoration: none; box-shadow: 0 0 14px 0 rgba(255,255,255,0.19);">
-              Request Access
+              Try Now
             </span>
           </div>
         </div>

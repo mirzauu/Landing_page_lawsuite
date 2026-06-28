@@ -46,7 +46,7 @@ export function NavBar() {
             variant="secondary"
             className="hidden h-10 font-semibold sm:block"
           >
-            <Link href="/request-access">Request Access</Link>
+            <Link href="https://app.verbalex.paperpie.io/">Try Now</Link>
           </Button>
           <Button
             onClick={() => setOpen(!open)}
@@ -85,7 +85,7 @@ export function NavBar() {
             </li>
           </ul>
           <Button asChild variant="secondary" className="text-lg">
-            <Link href="/request-access">Request Access</Link>
+            <Link href="https://app.verbalex.paperpie.io/">Try Now</Link>
           </Button>
         </nav>
       </div>
