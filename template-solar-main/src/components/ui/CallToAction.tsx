@@ -18,7 +18,7 @@ export function CallToAction() {
           </p>
           <div className="flex flex-wrap gap-4">
             <Button asChild className="text-md">
-              <Link href="https://app.verbalex.paperpie.io/">Try Now</Link>
+              <Link href="https://www.app.verbalexai.com">Try Now</Link>
             </Button>
             <Button asChild className="text-md" variant="secondary">
               <Link href="#">Book a Demo</Link>

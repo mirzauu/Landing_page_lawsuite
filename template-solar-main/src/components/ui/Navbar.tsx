@@ -30,15 +30,16 @@ export function NavBar() {
           </Link>
           <nav className="hidden sm:block md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:transform">
             <div className="flex items-center gap-10 font-medium">
-              <Link className="px-2 py-1 text-gray-900" href="#how-it-works">
+              <Link className="px-2 py-1 text-gray-900" href="/#how-it-works">
                 How It Works
               </Link>
-              <Link className="px-2 py-1 text-gray-900" href="#features">
+              <Link className="px-2 py-1 text-gray-900" href="/#features">
                 Features
               </Link>
-              <Link className="px-2 py-1 text-gray-900" href="#demo">
+              <Link className="px-2 py-1 text-gray-900" href="/#demo">
                 Demo
               </Link>
+              
             </div>
           </nav>
           <Button
@@ -46,7 +47,7 @@ export function NavBar() {
             variant="secondary"
             className="hidden h-10 font-semibold sm:block"
           >
-            <Link href="https://app.verbalex.paperpie.io/">Try Now</Link>
+            <Link href="https://www.app.verbalexai.com">Try Now</Link>
           </Button>
           <Button
             onClick={() => setOpen(!open)}
@@ -75,17 +76,20 @@ export function NavBar() {
         >
           <ul className="space-y-4 font-medium">
             <li onClick={() => setOpen(false)}>
-              <Link href="#how-it-works">How It Works</Link>
+              <Link href="/#how-it-works">How It Works</Link>
             </li>
             <li onClick={() => setOpen(false)}>
-              <Link href="#features">Features</Link>
+              <Link href="/#features">Features</Link>
             </li>
             <li onClick={() => setOpen(false)}>
-              <Link href="#demo">Demo</Link>
+              <Link href="/#demo">Demo</Link>
+            </li>
+            <li onClick={() => setOpen(false)}>
+              <Link href="/storyboard" className="text-orange-600 font-semibold">Promo Video</Link>
             </li>
           </ul>
           <Button asChild variant="secondary" className="text-lg">
-            <Link href="https://app.verbalex.paperpie.io/">Try Now</Link>
+            <Link href="https://www.app.verbalexai.com">Try Now</Link>
           </Button>
         </nav>
       </div>
