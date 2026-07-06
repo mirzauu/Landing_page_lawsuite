@@ -7,30 +7,42 @@ import { NavBar } from "@/components/ui/Navbar"
 import { siteConfig } from "./siteConfig"
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yoururl.com"),
-  title: siteConfig.name,
-  description: siteConfig.description,
-  keywords: ["Marketing", "Database", "Software"],
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: "VerbaLex AI | Stenographic & Legal Audio AI Assistant",
+    template: "%s | VerbaLex AI"
+  },
+  description: "Convert stenographic reports, depositions, and legal audio into structured, accurate, and verified court-ready documents using advanced AI.",
+  keywords: [
+    "VerbaLex AI",
+    "legal document transcription",
+    "court reporter audio transcript",
+    "court-ready legal documents",
+    "stenography report translation",
+    "AI legal transcription assistant",
+    "deposition transcript generator",
+    "court stenography software"
+  ],
   authors: [
     {
-      name: "yourname",
-      url: "",
+      name: "VerbaLex AI",
+      url: "https://verbalex.ai",
     },
   ],
-  creator: "yourname",
+  creator: "VerbaLex AI",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: siteConfig.url,
-    title: siteConfig.name,
-    description: siteConfig.description,
+    title: "VerbaLex AI | Stenographic & Legal Audio AI Assistant",
+    description: "Convert stenographic reports, depositions, and legal audio into structured, accurate, and verified court-ready documents using advanced AI.",
     siteName: siteConfig.name,
   },
   twitter: {
     card: "summary_large_image",
-    title: siteConfig.name,
-    description: siteConfig.description,
-    creator: "@yourname",
+    title: "VerbaLex AI | Stenographic & Legal Audio AI Assistant",
+    description: "Convert stenographic reports, depositions, and legal audio into structured, accurate, and verified court-ready documents using advanced AI.",
+    creator: "@verbalexai",
   },
   icons: {
     icon: "/favicon.ico",
