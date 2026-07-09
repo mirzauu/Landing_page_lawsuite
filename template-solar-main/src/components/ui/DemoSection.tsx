@@ -17,15 +17,15 @@ export function DemoSection() {
         <HeroVideoDialog
           className="block dark:hidden"
           animationStyle="from-center"
-          videoSrc="https://www.youtube.com/embed/Nw6_AjkmTK8?si=7qPV6tm0X6qqRgQq"
-          thumbnailSrc="/images/Screenshot%202026-07-06%20210350.png"
+          videoSrc="https://www.youtube.com/embed/lI3oBqUsTuM?si=LIfpYct7ebSqPirS"
+          thumbnailSrc="/Screenshot%202026-07-09%20214148.png"
           thumbnailAlt="Hero Video"
         />
         <HeroVideoDialog
           className="hidden dark:block"
           animationStyle="from-center"
-          videoSrc="https://www.youtube.com/embed/Nw6_AjkmTK8?si=7qPV6tm0X6qqRgQq"
-          thumbnailSrc="/images/Screenshot%202026-07-06%20210350.png"
+          videoSrc="https://www.youtube.com/embed/lI3oBqUsTuM?si=LIfpYct7ebSqPirS"
+          thumbnailSrc="/Screenshot%202026-07-09%20214148.png"
           thumbnailAlt="Hero Video"
         />
       </div>

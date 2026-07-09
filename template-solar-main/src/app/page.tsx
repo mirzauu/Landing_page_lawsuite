@@ -15,15 +15,14 @@ export default function Home() {
         <Hero />
       </div>
       <div className="mt-32 px-4 xl:px-0">
+        <DemoSection />
+      </div>
+      <div className="mt-16 px-4 xl:px-0">
         <HowItWorks />
       </div>
       <FeatureDivider className="my-16 max-w-6xl" />
       <div className="mt-16 px-4 xl:px-0">
         <Features />
-      </div>
-      <FeatureDivider className="my-16 max-w-6xl" />
-      <div className="mt-16 px-4 xl:px-0">
-        <DemoSection />
       </div>
       <FeatureDivider className="my-16 max-w-6xl" />
       <div className="mt-16 px-4 xl:px-0">
