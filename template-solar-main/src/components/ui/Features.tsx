@@ -302,26 +302,7 @@ export default function Features() {
             />
           </div>
 
-          {/* Floating PDF Card */}
-          <div className="absolute bottom-4 right-4 z-50 w-64 rounded-xl border border-white/60 bg-white/70 p-3 shadow-xl backdrop-blur-md transition-transform hover:scale-105 pointer-events-auto group">
-            <div className="flex justify-between items-center mb-2">
-              <h4 className="text-xs font-bold text-gray-800">Stenographic report</h4>
-              <button 
-                onClick={() => setExpandedPdf({ url: "/case_raw_data.pdf", title: "Stenographic report (case_raw_data.pdf)" })}
-                className="rounded bg-white p-1 shadow-sm border border-gray-200 text-gray-500 hover:text-gray-900 transition-colors"
-                title="View Fullscreen"
-              >
-                <RiFullscreenFill className="size-3.5" />
-              </button>
-            </div>
-            <div className="relative">
-              <iframe src="/case_raw_data.pdf#toolbar=0" className="h-40 w-full rounded-lg border border-gray-200 bg-white pointer-events-none" />
-              <div 
-                className="absolute inset-0 cursor-pointer" 
-                onClick={() => setExpandedPdf({ url: "/case_raw_data.pdf", title: "Stenographic report (case_raw_data.pdf)" })}
-              />
-            </div>
-          </div>
+
 
           <div className="pointer-events-none h-104 p-10 select-none">
             <div className="relative flex flex-col items-center justify-center">
@@ -526,44 +507,7 @@ export default function Features() {
             />
           </svg>
 
-          <div className="relative z-10 w-full max-w-md rounded-2xl border border-gray-200 bg-white/70 backdrop-blur-md p-4 shadow-2xl transition-transform hover:scale-[1.02]">
-            <div className="flex items-center justify-between mb-3 border-b border-gray-100 pb-3">
-              <div className="flex items-center gap-2">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-red-100 text-red-600">
-                  <RiFilePdfFill className="size-5" />
-                </div>
-                <div>
-                  <h4 className="text-xs font-bold text-gray-900 leading-tight">Ai generated Final proof doc</h4>
-                  <p className="text-[10px] text-gray-500 font-medium">SAKHAI -v- DELKAP.pdf</p>
-                </div>
-              </div>
-              <button 
-                onClick={() => setExpandedPdf({ url: "/case_proof_file.pdf", title: "Ai generated Final proof doc (case_proof_file.pdf)" })}
-                className="rounded-full bg-gray-50 p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-900 transition-colors"
-                title="View Fullscreen"
-              >
-                <RiFullscreenFill className="size-4" />
-              </button>
-            </div>
-            <div className="relative aspect-[3/4] w-full overflow-hidden rounded-lg border border-gray-100 bg-gray-50 shadow-inner group">
-              <iframe 
-                src="/case_proof_file.pdf#toolbar=0&navpanes=0&scrollbar=0" 
-                className="h-full w-full pointer-events-none" 
-                title="PDF Preview"
-              />
-              <div 
-                className="absolute inset-0 cursor-pointer flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-gray-900/10 backdrop-blur-[1px]"
-                onClick={() => setExpandedPdf({ url: "/case_proof_file.pdf", title: "Ai generated Final proof doc (case_proof_file.pdf)" })}
-              >
-                 <div className="rounded-full bg-white px-4 py-2 text-xs font-bold text-gray-900 shadow-lg ring-1 ring-black/5 flex items-center gap-2">
-                    <RiFullscreenFill className="size-3.5" />
-                    Click to Inspect
-                 </div>
-              </div>
-            </div>
-            
 
-          </div>
         </div>
       </div>
 
