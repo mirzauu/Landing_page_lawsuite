@@ -2,7 +2,6 @@
 import { useState, useRef, useEffect } from "react"
 import matchedData from "../../../matched_output.json"
 import {
-  RiFullscreenFill,
   RiFilePdfFill,
   RiMicFill,
   RiCloseLine,
